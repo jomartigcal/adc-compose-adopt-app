@@ -46,6 +46,12 @@ fun MyApp() {
         composable(route = "list") {
             AnimalListScreen(navController)
         }
+        composable(
+            route = "detail/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.IntType })
+        ) {
+            AnimalDetailScreen(navController, it.arguments?.getInt("id") ?: 0)
+        }
     }
 }
 
