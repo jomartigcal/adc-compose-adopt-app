@@ -39,10 +39,10 @@ fun getAnimals() = listOf(
     Animal(
         162095, "Baker", R.drawable.ic_dog_baker, "American Bulldog", "Male",
         "This soulful, adorable face belongs to our buddy, Baker. Baker is an interesting combination of Party Guy and Shy Guy. While he loves to play and cuddle and go for walks, Baker is also quite unsure of new things and situations.\n" +
-                "He needs a home that has the time to calmly introduce him to all things. Baker is not a dog for a first time dog owner. The best home for Baker would one with breed experience, no other pets in the house and no small children because he will unintentally knock them over! Baker is very strong and with his enthusiasm to play can be a handful. Still he is also cuddly and affectionate and a kind look goes a long way with him.\n" +
-                "At only 14 months, Baker can be like a very large puppy on the loose. Obedience training is highly recommended for him to become the great adult dog we know he can be.\n" +
-                "As with all bully breeds, Baker is a sensitive fellow who would love to be someone’s couch buddy. Buddy does have allergies to poultry so his diet must be monitored, otherwise he is in great shape.\n" +
-                "If you are looking for a companion who can fit in for both play and quiet times, Baker may be for you.Please note, due to the current COVID-19 pandemic our adoption process has changed."
+            "He needs a home that has the time to calmly introduce him to all things. Baker is not a dog for a first time dog owner. The best home for Baker would one with breed experience, no other pets in the house and no small children because he will unintentally knock them over! Baker is very strong and with his enthusiasm to play can be a handful. Still he is also cuddly and affectionate and a kind look goes a long way with him.\n" +
+            "At only 14 months, Baker can be like a very large puppy on the loose. Obedience training is highly recommended for him to become the great adult dog we know he can be.\n" +
+            "As with all bully breeds, Baker is a sensitive fellow who would love to be someone’s couch buddy. Buddy does have allergies to poultry so his diet must be monitored, otherwise he is in great shape.\n" +
+            "If you are looking for a companion who can fit in for both play and quiet times, Baker may be for you.Please note, due to the current COVID-19 pandemic our adoption process has changed."
     ),
     Animal(
         162178, "Biggy", R.drawable.ic_dog_biggy, "Labrador Retriever", "Male",

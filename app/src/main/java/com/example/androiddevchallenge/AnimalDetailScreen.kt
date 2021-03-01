@@ -15,15 +15,19 @@
  */
 package com.example.androiddevchallenge
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -33,12 +37,12 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.data.Animal
@@ -73,6 +77,8 @@ fun AnimalDetailScreen(navController: NavHostController, animalId: Int) {
 
 @Composable
 fun AnimalDetails(animal: Animal) {
+    val context = LocalContext.current
+
     LazyColumn(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -114,7 +120,29 @@ fun AnimalDetails(animal: Animal) {
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp),
                 textAlign = TextAlign.Justify
             )
+            Spacer(modifier = Modifier.height((16.dp)))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Button(
+                    onClick = { adoptAnimal(context, animal) },
+                ) {
+                    Text("Adopt ${animal.name} now")
+                }
+            }
+            Spacer(modifier = Modifier.height((16.dp)))
         }
+    }
+}
+
+fun adoptAnimal(context: Context, animal: Animal) {
+    val intent = Intent(
+        Intent.ACTION_VIEW,
+        Uri.parse("https://adopt.spca.bc.ca/pets/${animal.id}")
+    )
+    if (intent.resolveActivity(context.packageManager) != null) {
+        context.startActivity(intent)
     }
 }
 
